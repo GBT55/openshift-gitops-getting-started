@@ -11,7 +11,7 @@ metadata:
     app.openshift.io/runtime: java
   name: spring-petclinic-customized
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: spring-petclinic
@@ -30,8 +30,8 @@ spec:
             path: /
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 45
-          periodSeconds: 10
+          initialDelaySeconds: 120
+          periodSeconds: 60
           successThreshold: 1
           timeoutSeconds: 1
         ports:
@@ -47,7 +47,7 @@ spec:
             path: /
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 45
-          periodSeconds: 10
+          initialDelaySeconds: 120 
+          periodSeconds: 60
           successThreshold: 1
           timeoutSeconds: 5
